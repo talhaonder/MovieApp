@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Image, ScrollView, Text, Pressable } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { likeSlice } from "../store/likeSlice";
+import { likeSlice } from '../store/likeSlice';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { image500 } from '../../api/moviedb';
 
@@ -10,11 +10,13 @@ const MovieDetailsScreen = ({ route }) => {
   const dispatch = useDispatch();
 
   const addToLike = () => {
-    dispatch(likeSlice.actions.addLikeItem({
-      id: selectedMovie.id,
-      title: selectedMovie.title,
-      poster_path: selectedMovie.poster_path
-    }));
+    dispatch(
+      likeSlice.actions.addLikeItem({
+        id: selectedMovie.id,
+        title: selectedMovie.title,
+        poster_path: selectedMovie.poster_path
+      })
+    );
   };
 
   return (
@@ -37,14 +39,14 @@ const MovieDetailsScreen = ({ route }) => {
 const styles = StyleSheet.create({
   image: {
     width: '100%',
-    aspectRatio: 0.7,
+    aspectRatio: 0.7
   },
   release_date: {
     color: 'rgb(129, 132, 128)',
     fontWeight: '500',
     fontSize: 20,
     textAlign: 'center',
-    marginTop: 5,
+    marginTop: 5
   },
   overview: {
     color: 'rgb(129, 132, 128)',
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 24,
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 10
   },
   button: {
     position: 'absolute',
@@ -62,31 +64,30 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 20,
     borderRadius: 100,
-    alignItems: 'center',
-
+    alignItems: 'center'
   },
   title: {
-    color: "white",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 45,
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 45
   },
   price: {
     fontWeight: '500',
     fontSize: 16,
-    letterSpacing: 1.5,
+    letterSpacing: 1.5
   },
   description: {
     marginVertical: 10,
     fontSize: 18,
     lineHeight: 30,
-    fontWeight: '300',
+    fontWeight: '300'
   },
   buttonText: {
     color: 'white',
     fontWeight: '500',
-    fontSize: 16,
-  },
+    fontSize: 16
+  }
 });
 
 export default MovieDetailsScreen;

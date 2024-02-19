@@ -1,4 +1,4 @@
-import {Animated} from 'react-native';
+import { Animated } from 'react-native';
 
 export const AnimatedAppBar = (translateY: any, navigation: any) => {
   return (
@@ -12,14 +12,14 @@ export const AnimatedAppBar = (translateY: any, navigation: any) => {
 
         //for animation
         height: 64,
-        transform: [{translateY: translateY}],
+        transform: [{ translateY: translateY }],
         position: 'absolute',
         top: 0,
         right: 0,
         left: 0,
         elevation: 4,
         zIndex: 1,
-      }}>
-    </Animated.View>
+      }}
+    />
   );
 };

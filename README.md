@@ -34,4 +34,4 @@ MovieApp, Redux ve React Navigation gibi teknolojiler kullanılarak geliştirilm
 
 ## Katkılar
 
-Katkılarınızı memnuniyetle karşılıyoruz. Lütfen açık bir issue açın veya bir pull request gönderin. 
+Katkılarınızı memnuniyetle karşılıyoruz. Lütfen açık bir issue açın veya bir pull request gönderin.

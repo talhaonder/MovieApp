@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { likeSlice } from "../store/likeSlice";
+import { likeSlice } from '../store/likeSlice';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { image500 } from '../../api/moviedb';
 
@@ -18,12 +18,7 @@ const LikeListItem = ({ likeItem }) => {
       <View style={styles.contentContainer}>
         <Text style={styles.name}>{likeItem.like.title}</Text>
         <View style={styles.footer}>
-          <Icon
-            name="trash"
-            onPress={removeLike}
-            size={24}
-            color="red"
-          />
+          <Icon name="trash" onPress={removeLike} size={24} color="red" />
           <Text style={styles.quantity}>Delete</Text>
         </View>
       </View>
@@ -36,31 +31,31 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingHorizontal: 20,
     flexDirection: 'row',
-    alignItems: "center"
+    alignItems: 'center'
   },
   contentContainer: {
     flex: 1,
-    marginLeft: 10,
+    marginLeft: 10
   },
   image: {
     width: '40%',
-    aspectRatio: 0.7,
+    aspectRatio: 0.7
   },
   name: {
     fontWeight: '700',
     fontSize: 24,
-    color: "white"
+    color: 'white'
   },
   quantity: {
     marginHorizontal: 10,
     fontWeight: 'bold',
-    color: 'gray',
+    color: 'gray'
   },
   footer: {
     marginTop: 'auto',
     flexDirection: 'row',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 });
 
 export default LikeListItem;
