@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, StatusBar, Text } from 'react-native';
-import Navigation from './src/navigation';
 import { Provider } from 'react-redux';
-import { store } from './src/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store';
+import MainComponent from './MainComponent'; // Ana bileşeninizin dosyasını içe aktarın
 
-export default function App() {
+const App = () => {
   return (
     <Provider store={store}>
-      <View style={{ flex: 1 }}>
-        <Navigation />
-        <StatusBar style="auto" />
-      </View>
+      <PersistGate loading={null} persistor={persistor}>
+        <MainComponent />
+      </PersistGate>
     </Provider>
   );
-}
+};
+
+export default App;

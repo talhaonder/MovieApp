@@ -3,6 +3,8 @@ import {apiKey} from '../src/data';
 
 const apiBaseUrl = 'https://api.themoviedb.org/3';
 const trendingMoviesEndpoint = `${apiBaseUrl}/trending/movie/day?api_key=${apiKey}`
+const searchMoviesEndpoint = `${apiBaseUrl}/search/movie?api_key=${apiKey}`
+
 
 export const image500 = path=> path? `https://image.tmdb.org/t/p/w500${path}` : null;
 export const image342 = path=> path? `https://image.tmdb.org/t/p/w342${path}` : null;
@@ -24,4 +26,8 @@ const apiCall = async (endpoint, params)=>{
 }
 export const fetchTrendingMovies = () =>{
     return apiCall(trendingMoviesEndpoint);
+}
+
+export const searchMovies = params =>{
+    return apiCall(searchMoviesEndpoint, params);
 }

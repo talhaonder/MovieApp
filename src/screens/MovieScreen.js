@@ -21,12 +21,13 @@ const MovieScreen = ({ navigation }) => {
         <View
           style={{
             flexDirection: "row",
-            justifyContent: "space-between",
             alignItems: "center",
-            margin: 10,
+            marginTop: 10,
+            marginHorizontal: 10,
+            marginBottom: 10,
           }}
         >
-          <Pressable onPress={() => navigation.navigate("Profile")}>
+          <Pressable onPress={() => navigation.navigate("Profile")} style={{marginRight: 140}}>
             <Icon
               name="user"
               size={24}
@@ -42,13 +43,22 @@ const MovieScreen = ({ navigation }) => {
           >
             <Text style={{ color: "white", fontWeight: "700" }}>Talh</Text>App
           </Text>
-          <Pressable onPress={() => navigation.navigate("Liked")}>
-            <Icon
-              name="search"
-              size={24}
-              color="gray"
-            />
-          </Pressable>
+          <View style={styles.rightContainer}>
+            <Pressable onPress={() => navigation.navigate("Search")} style={styles.iconContainer}>
+              <Icon
+                name="search"
+                size={24}
+                color="gray"
+              />
+            </Pressable>
+            <Pressable onPress={() => navigation.navigate("Liked")} style={styles.iconContainer}>
+              <Icon
+                name="heart"
+                size={24}
+                color="gray"
+              />
+            </Pressable>
+          </View>
         </View>
       </SafeAreaView>
       <FlatList
@@ -87,6 +97,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 45,
   },
+  rightContainer: {
+    flexDirection: "row",
+    marginRight: 10,
+    marginLeft: 80
+  },
+  iconContainer: {
+    marginLeft: 10, 
+  }
 });
 
 export default MovieScreen;

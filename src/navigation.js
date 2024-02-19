@@ -5,6 +5,7 @@ import MovieDetailsScreen from "./screens/MovieDetailsScreen";
 import MovieScreen from "./screens/MovieScreen";
 import LikedScreen from "./screens/LikedScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import SearchScreen from "./screens/SearchScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ const Navigation = () => {
                 />
                 <Stack.Screen name="Liked" component={LikedScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );
