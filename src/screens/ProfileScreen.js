@@ -19,31 +19,31 @@ const ProfileScreen = () => {
       <View style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-            <Icon name="arrow-left" size={24} color="black" style={styles.backIcon} />
+            <Icon name='arrow-left' size={24} color='black' style={styles.backIcon} />
           </TouchableOpacity>
           <Text style={styles.headerText}>
-            <Icon name="user" size={20} color="black" /> Profil
+            <Icon name='user' size={20} color='black' /> Profil
           </Text>
         </View>
         <View style={styles.profileContent}>
           <View style={{ marginLeft: 20 }}>
             <Text style={styles.profileText}>
-              <Icon name="user" size={20} color="black" /> Talha Önder
+              <Icon name='user' size={20} color='black' /> Talha Önder
             </Text>
             <Text style={styles.profileText}>
-              <Icon name="envelope" size={20} color="black" /> ltalhaonderl@gmail.com
+              <Icon name='envelope' size={20} color='black' /> ltalhaonderl@gmail.com
             </Text>
             <Text style={styles.profileText}>
-              <Icon name="map-marker" size={20} color="black" /> Bolu, Türkiye
+              <Icon name='map-marker' size={20} color='black' /> Bolu, Türkiye
             </Text>
             <TouchableOpacity onPress={openGitHub}>
               <Text style={[styles.link, styles.profileText]}>
-                <Icon name="github" size={20} color="black" /> GitHub
+                <Icon name='github' size={20} color='black' /> GitHub
               </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={openLinkedIn}>
               <Text style={[styles.link, styles.profileText]}>
-                <Icon name="linkedin" size={20} color="black" /> LinkedIn
+                <Icon name='linkedin' size={20} color='black' /> LinkedIn
               </Text>
             </TouchableOpacity>
           </View>
@@ -56,35 +56,35 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: 20,
   },
   backButton: {
-    marginRight: 10
+    marginRight: 10,
   },
   backIcon: {
     height: 25,
-    width: 25
+    width: 25,
   },
   headerText: {
     fontSize: 24,
     fontWeight: 'bold',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   profileContent: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   profileImage: {
     height: 100,
     width: 100,
     borderRadius: 50,
-    marginBottom: 20
+    marginBottom: 20,
   },
   profileText: {
     fontSize: 18,
@@ -93,11 +93,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     color: 'black',
-    paddingLeft: 10
+    paddingLeft: 10,
   },
   link: {
-    color: 'blue'
-  }
+    color: 'blue',
+  },
 });
 
 export default ProfileScreen;

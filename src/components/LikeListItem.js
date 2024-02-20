@@ -31,30 +31,30 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingHorizontal: 20,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   contentContainer: {
     flex: 1,
-    marginLeft: 10
+    marginLeft: 10,
   },
   image: {
     width: '40%',
-    aspectRatio: 0.7
+    aspectRatio: 0.7,
   },
   name: {
     fontWeight: '700',
     fontSize: 24,
-    color: 'white'
+    color: 'white',
   },
   quantity: {
     marginHorizontal: 10,
     fontWeight: 'bold',
-    color: 'gray'
+    color: 'gray',
   },
   footer: {
     marginTop: 'auto',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   }
 });
 

@@ -9,7 +9,7 @@ import {
   ScrollView,
   Text,
   TouchableWithoutFeedback,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { debounce } from 'lodash';
@@ -27,7 +27,7 @@ const SearchScreen = () => {
         query: value,
         include_adult: 'false',
         language: 'en-US',
-        page: '1'
+        page: '1',
       }).then((data) => {
         if (data && data.results) {
           setResults(data.results);
@@ -46,26 +46,28 @@ const SearchScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
           onChangeText={handleTextDebounce}
-          placeholder="Search Movie"
-          placeholderTextColor="lightgray"
+          placeholder='Search Movie'
+          placeholderTextColor='lightgray'
           style={styles.input}
         />
       </View>
       {results.length > 0 ? (
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.resultsContainer}>
+          contentContainerStyle={styles.resultsContainer}
+        >
           <Text style={styles.resultsText}>Results ({results.length})</Text>
           <View style={styles.moviesContainer}>
             {results.map((item, index) => (
               <TouchableWithoutFeedback
                 key={index}
-                onPress={() => navigation.navigate('Movie Details', { selectedMovie: item })}>
+                onPress={() => navigation.navigate('Movie Details', { selectedMovie: item })}
+              >
                 <View style={styles.movieItem}>
                   <Image
                     style={styles.movieImage}
                     source={{
-                      uri: image185(item?.poster_path)
+                      uri: image185(item?.poster_path),
                     }}
                   />
                   <Text style={styles.movieTitle}>
@@ -87,7 +89,7 @@ const SearchScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   inputContainer: {
     flexDirection: 'row',
@@ -98,60 +100,60 @@ const styles = StyleSheet.create({
     marginTop: 13,
     borderWidth: 1,
     borderRadius: 999,
-    borderColor: 'rgb(94, 97, 94)'
+    borderColor: 'rgb(94, 97, 94)',
   },
   input: {
     paddingBottom: 10,
     paddingLeft: 15,
     color: 'white',
     fontWeight: '400',
-    flex: 1
+    flex: 1,
   },
   backButton: {
     borderRadius: 999,
     padding: 12,
     margin: 4,
-    backgroundColor: 'rgb(30, 33, 29)'
+    backgroundColor: 'rgb(30, 33, 29)',
   },
   backIcon: {
     height: 30,
-    width: 30
+    width: 30,
   },
   resultsContainer: {
     paddingHorizontal: 15,
-    marginTop: 15
+    marginTop: 15,
   },
   resultsText: {
     color: 'white',
     fontWeight: '400',
-    marginLeft: 4
+    marginLeft: 4,
   },
   moviesContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   movieItem: {
     marginBottom: 16,
-    marginTop: 8
+    marginTop: 8,
   },
   movieImage: {
     borderRadius: 25,
     width: width * 0.44,
-    height: height * 0.3
+    height: height * 0.3,
   },
   movieTitle: {
     color: 'rgb(142, 144, 143)',
-    marginLeft: 4
+    marginLeft: 4,
   },
   noResultsContainer: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   noResultsImage: {
     height: height * 0.5,
-    width: width
-  }
+    width: width,
+  },
 });
 
 export default SearchScreen;
